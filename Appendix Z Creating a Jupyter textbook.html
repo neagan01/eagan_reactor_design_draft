@@ -93,7 +93,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Welcome to Chemical Reactor Design
+   Introduction
   </a>
  </li>
 </ul>
@@ -264,13 +264,14 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="appendix-z-creating-your-own-jupyter-book-textbook">
 <h1>Appendix Z: Creating your own Jupyter Book textbook<a class="headerlink" href="#appendix-z-creating-your-own-jupyter-book-textbook" title="Permalink to this headline">¶</a></h1>
 <p>Here the procedure used to develop this textbook (created 2022-2023) is described. This was created on a Windows 10 machine. This is by no means the best way to do this, it is simply the way it was done here.</p>
+<p><strong>Creating the book</strong></p>
 <ol class="simple">
 <li><p>Install Anaconda from <a class="reference external" href="https://www.anaconda.com/">https://www.anaconda.com/</a></p></li>
 <li><p>Create new Python 3.7 environment was created in Anaconda by going to the Environments tab and selecting “create”. Call it “py37”. This may help with Windows compatibility issues.</p></li>
 <li><p>Run Anaconda Prompt (found in Programs/Anaconda3 (64-bit)/)</p></li>
 <li><p>Load environment with “activate py37”</p></li>
 <li><p>Install jupyter books with the command “conda install -c conda-forge jupyter-book”. It may take a bit to successfully install.</p></li>
-<li><p>Navigate to the folder where you will create your book.</p></li>
+<li><p>Navigate to the folder where you will create your book–I did this in my GitHub folder and will refer to it as such throughout.</p></li>
 <li><p>Create a template book with “jupyter-book create bookname”</p></li>
 <li><p>Build the book with command “jupyter-book build bookname”</p></li>
 <li><p>With an appropriate editor (e.g., Notebook++), modify your title and other details in the “_config.yml” file.</p></li>
@@ -278,11 +279,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Define the organization of your book by editing the “_toc.yml” file</p></li>
 <li><p>Open book by navigating to “bookname/_build/html” and opening an html file to jump to that chapter of the book.</p></li>
 </ol>
+<p><strong>Editing the book</strong>
+After the book has been created, the content can be updated at any time but will not be instantly reflected in the book’s html pages. <strong>To update the book,</strong> simply build it again by stepping out of the folder and using the command “jupyter-book build bookname.”</p>
+<p><strong>Making the book available online through GitHub</strong></p>
+<ol class="simple">
+<li><p>Create a GitHub account if you have not already. You will create a username with it.</p></li>
+<li><p>Create a new repository. It must be public, and you should have it generate a README file. Name it whatever you like; for this case, we will call it “book_draft”</p></li>
+<li><p>In Anaconda, install “git” into your 3.7 environment.</p></li>
+<li><p>In Anaconda prompt (3.7 environment), install the GitHub pages import tool with command “pip install ghp-import”</p></li>
+<li><p>In Anaconda prompt (in 3.7), navigate to your GitHub folder (or whichever you prefer) and clone your repository. Do this by first finding the url of your repository which will be something like <a class="reference external" href="https://github.com/username/book_draft">https://github.com/username/book_draft</a>. In the prompt enter the command “git clone <a class="reference external" href="https://github.com/username/book_draft">https://github.com/username/book_draft</a>” or whatever URL is appropriate.</p></li>
+<li><p>Copy the contents of the book you previously created into this folder. Assuming that you are in the GitHub folder and that both “bookname” and “book_draft” are as well, use the command “cp -r bookname/* book_draft/” to recursively (-r) copy (cp) all contents (star) in the bookname folder (bookname/) to your new repository (book_draft/).</p></li>
+<li><p>Enter the book_draft folder. In it you should see a “_build” folder which holds your html files.</p></li>
+<li><p>Enter the command “ghp-import -n -p -f _build/html” to create your book.</p></li>
+<li><p>To find the url for your new book, first go to your repository online. Then click “settings” along the top bar under your repository location, then click “pages” along the left toolbar, and there you will see the url. Anyone can access your book at this link.</p></li>
+</ol>
+<p><strong>Updating your book</strong>
+You can upload a new version of your book at any time by rebuilding it as noted above and then re-importing it by again entering the main folder and using the command “ghp-import -n -p -f _build/html”</p>
 <div class="section" id="additional-resources-for-building-jupyter-notebooks-and-textbooks-for-chemical-engineering-courses">
 <h2>Additional resources for building Jupyter notebooks and textbooks for chemical engineering courses<a class="headerlink" href="#additional-resources-for-building-jupyter-notebooks-and-textbooks-for-chemical-engineering-courses" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Jupyter book current documentation: <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">https://jupyterbook.org/en/stable/intro.html</a></p></li>
 <li><p>Dominguez et al., 2021, Teaching chemical engineering using Jupyter notebook: Problem generators and lecturing tools. <a class="reference external" href="https://doi.org/10.1016/j.ece.2021.06.004">https://doi.org/10.1016/j.ece.2021.06.004</a></p></li>
+<li><p>A useful video for generating a Jupyter textbook: <a class="reference external" href="https://www.youtube.com/watch?v=lZ2FHTkyaMU&amp;list=PLqHWxCzYzDAZOZJ90O-biMvc54qoCTtOu&amp;index=8">https://www.youtube.com/watch?v=lZ2FHTkyaMU&amp;list=PLqHWxCzYzDAZOZJ90O-biMvc54qoCTtOu&amp;index=8</a></p></li>
 </ol>
 </div>
 </div>
