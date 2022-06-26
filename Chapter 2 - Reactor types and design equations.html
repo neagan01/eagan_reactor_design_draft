@@ -285,6 +285,16 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reactor-types-batch-cstr-pfr-pbr-fbr">
+     2.4. Reactor types: batch, CSTR, PFR, PBR, FBR
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conversion-and-reactor-sizing-basics">
+     2.5. Conversion and reactor sizing basics
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -366,6 +376,16 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reactor-types-batch-cstr-pfr-pbr-fbr">
+     2.4. Reactor types: batch, CSTR, PFR, PBR, FBR
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conversion-and-reactor-sizing-basics">
+     2.5. Conversion and reactor sizing basics
+    </a>
    </li>
   </ul>
  </li>
@@ -462,8 +482,20 @@ const thebe_selector_output = ".output, .cell_output"
 <p>As such, we can note that:</p>
 <div class="math notranslate nohighlight">
 \[G_j=\sum{r_{j,i}\cdot V_i}\]</div>
-<p>We can further expand on this by noting that</p>
+<p>We can further expand on this by noting that an infinestimally small volume cannot have spacial variation, thus we can subdivide our volume into infinite ones which are infinitesimally small and thus write the corresponding generation term:</p>
+<div class="math notranslate nohighlight">
+\[G_j=\int^{V_s}{r_j\cdot dV}\]</div>
+<p>Returning to the material balance equation therefore yields the following <strong>fundamental reactor design equation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[F_{j0}-F_j+\int^{V_s}{r_j\cdot dV}=\frac{dN_j}{dt}\]</div>
+<p>This is the starting point to derive any reactor design equation.</p>
 </div>
+</div>
+<div class="section" id="reactor-types-batch-cstr-pfr-pbr-fbr">
+<h3>2.4. Reactor types: batch, CSTR, PFR, PBR, FBR<a class="headerlink" href="#reactor-types-batch-cstr-pfr-pbr-fbr" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="conversion-and-reactor-sizing-basics">
+<h3>2.5. Conversion and reactor sizing basics<a class="headerlink" href="#conversion-and-reactor-sizing-basics" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
